@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<meta name="description" content="크리미의원 설문이벤트">
+	<meta name="keywords" content="크리미의원 설문이벤트">
+	<meta name="author" content="">
+	<meta property="og:title" content="크리미의원 설문이벤트">
+	<meta property="og:description" content="설문조사에만 참여하면 100% 혜택!">
+	<meta property="og:image" content="">
+	<title>크리미의원 설문이벤트</title>
+	<!-- <link rel="shortcut icon" type="image/x-icon" href=""> -->
+	<link rel="stylesheet" href="common/css/font.css">
+	<link rel="stylesheet" href="common/css/reset.css">
+	<link rel="stylesheet" href="common/css/slick.css">
+	<link rel="stylesheet" href="common/css/common.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/rivets/0.9.6/rivets.bundled.min.js" integrity="sha256-W79tvMHlloRixkQNrGjf2qz+nkjsuhRtV0N6duJOYnw=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/luxon@1.21.3/build/global/luxon.min.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<div id="container">
+			<header>
+				<img src="images/title_img.jpg" alt="">
+			</header>
+			<div class="que-area first">
+				<div class="tit">현재 개선하고 싶은 피부 고민은?</div>
+				<div id="skin" class="center-list">
+					<a onclick="toggleTrouble('여드름')" class="btn50">여드름</a>
+					<a onclick="toggleTrouble('모공')" class="btn50">모공</a>
+					<a onclick="toggleTrouble('여드름흉터')" class="btn50">여드름흉터</a>
+					<a onclick="toggleTrouble('붉은자국')" class="btn50 bottom">붉은자국</a>
+					<a onclick="toggleTrouble('색소')" class="btn50 bottom">색소</a>
+				</div>
+			</div>
+			<div class="sub-title">
+				<img src="images/border_02.jpg" alt="">
+					<p>
+						※ 신청하신 시술은 원하실때 예약 후 별도 시술 가능!
+					</p>
+				<img src="images/border_03.jpg" alt="">
+			</div>
+			<div class="que-area second">
+				<div class="tit">피부고민? 비용 걱정없이!</br>아무거나 선택해도</br>5만5천원에 해결!</div>
+				<ul class="product">
+					<li>
+						<div class="label">&middot; 원하는 레이저 시술 모두 클릭!</div>
+						<div id="laser" class="list">
+							<a onclick="toggleItem('아기주사')" class="btn50" style="width: 100%"><span>내 피부에 수분팡팡! <em>아기주사 > 5만5천원</em></span></a>
+							<a onclick="toggleItem('프락셀')" class="btn50" style="width: 100%; margin: 19px 0 0 0;"><span>매끌매끌한 피부 만들기 <em>프락셀 레이저 > 5만5천원</em></span></a>
+							<a onclick="toggleItem('IPL')" class="btn50" style="width: 100%; margin: 19px 0 0 0;"><span>주근깨, 잡티 개선은 물론 탄력증가까지! <em>IPL+비타민관리 > 5만5천원</em></span></a>
+							<a onclick="toggleItem('토닝')" class="btn50" style="width: 100%; margin: 19px 0 0 0;"><span>밝고 화사한피부! 기미,색소 개선 <em>레이저토닝+비타민관리 > 5만5천원</em></span></a>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="personal">
+				<div class="tit">이벤트 신청하기</div>
+				<form action="">
+					<input id="name" type="text" placeholder="이름을 입력해주세요">
+					<input id="tel" type="tel" placeholder="핸드폰 번호를 입력해주세요">
+					<select name="age" id="age">
+						<option value="x" selected>연령대를 선택해주세요</option>
+						<option value="20">20대</option>
+						<option value="30">30대</option>
+						<option value="40">40대</option>
+						<option value="50">50대</option>
+					</select>
+					<select name="exp" id="exp">
+						<option value="x" selected>시술 경험이 있으신가요?</option>
+						<option value="yes">네</option>
+						<option value="no">아니오</option>
+					</select>
+				</form>
+					<label for="agree">
+						<input class="check" type="checkbox" name="agree" id="agree" style="top:2000px !important">
+						<span>개인정보 이용 동의</span>
+					</label>
+					<p>서비스 및 이벤트공지, 상담을 위한 개인정보수집동의 <a href="./policy.html" target="_blank">[자세히보기]</a></p>
+				<a onclick="submit()" class="btn50" style="width: 100%; margin: 16px 0 0;">이벤트 신청하고 할인받기</a>
+			</div>
+			<div class="fraxel">
+				<img src="images/fraxel.jpg" alt="" style="width: 100%">
+			</div>
+			<div class="event-tip">
+				<img src="images/how.jpg" alt="">
+			</div>
+			<div id="history-container" class="hidden">
+				<div class="apply-list" rv-each-item="items">
+					<div class="apply-list-header">
+						<div class="apply-complete">신청완료</div>
+						<span>{ item.name }</span>
+						<span>|</span>
+						<span>{ item.phone }</span>
+					</div>
+					<div class="apply-list-content">
+						설문조사 이벤트 신청했습니다~!
+					</div>
+					<div class="apply-date">
+						{ item.timeString  }
+					</div>
+					<hr>
+				</div>
+			</div>
+			<div id="load-more" onclick="loadMore()">
+				댓글 더보기
+			</div>
+			<div style="height:100px"></div>
+
+			<!--
+			<footer>
+				<p class="default brown">시술을 신청하시면 이곳에 가격이 표시됩니다</p>
+				<p class="active hide">시술가 <span class="brown">100,000원</span> - 혜택가 <span class="brown">40,000원</span> <br class="m">= <span> 총 이벤트 가</span> <span class="red">60,000원</span></p>
+			</footer>
+			-->
+		</div>
+	</div><!-- id : wrap -->
+	<script>
+		$("#skin > a").click(function(){
+			$(this).toggleClass("on");
+		})
+		$("#EGF > a").click(function(){
+			$(this).toggleClass("on");
+		})
+		$("#injection > a").click(function(){
+			$(this).toggleClass("on");
+		})
+		$("#laser > a").click(function(){
+			$(this).toggleClass("on");
+		})
+	</script>
+</body>
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB0CpvVgLAX6eUGel-MDp1HTEzzsqrbnas",
+    authDomain: "pjt01-5d98b.firebaseapp.com",
+    databaseURL: "https://pjt01-5d98b.firebaseio.com",
+    projectId: "pjt01-5d98b",
+    storageBucket: "pjt01-5d98b.appspot.com",
+    messagingSenderId: "600917854479",
+    appId: "1:600917854479:web:276b430c7a1e97c28f567a",
+    measurementId: "G-K834JJ1H1W"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+//여기까지 내가한거
+
+  var db = firebase.firestore();
+</script>
+
+<script>
+function maskName(name) {
+	return name.substring(0,1) + '**';
+}
+function maskPhone(phone) {
+	return phone.replace(/(...)....(....)/, '$1-****-$2');
+}
+
+var lastFetched = {};
+var items = [];
+function loadHistory(offset, first = false) {
+	db.collection('survey').orderBy('createdAt', 'desc').startAt(lastFetched).limit(5).get()
+	.then(function (data) {
+		var list = data.docs.map(function(x) { 
+			var v = x.data();
+			v.name = maskName(v.name);
+			v.phone = maskPhone(v.phone);
+			v.time = luxon.DateTime.fromMillis((v.createdAt.seconds * 1000));
+			v.timeString = v.time.toFormat('yyyy-MM-dd hh:mm:ss');
+			return v;
+		});
+
+		for (var i=first ? 0 : 1;i<list.length;i++)
+			items.push(list[i]);
+
+		rivets.bind(
+			document.getElementById("history-container"), 
+			{items: items}
+		);
+		document.getElementById("history-container").classList.remove('hidden');
+
+		lastFetched = data.docs[data.docs.length - 1];
+	});
+}
+function loadMore() {
+	loadHistory(lastFetched);
+}
+
+var discountRate = 0.1;
+var redirectTo = 'https://www.creamyclinic.co.kr/';
+window.addEventListener('load', function() {
+	loadHistory(lastFetched, true);
+
+	db.collection('value').doc('redirectTo')
+		.get()
+		.then(function(doc) {
+			redirectTo = doc.data().url;
+		});
+});
+</script>
+<script>
+var prices = {
+	original: 0,
+	discount: 0,
+	final: 0
+};
+var troubles = {};
+var bucket = {};
+
+function toggleItem(item) {
+	if (bucket[item])
+		delete bucket[item];
+	else
+		bucket[item] = true;
+}
+function toggleTrouble(item) {
+	if (troubles[item])
+		delete troubles[item];
+	else
+		troubles[item] = true;
+}
+
+function writeToDb(doc, callback) {
+	var servey = db.collection("survey");
+	doc.createdAt = firebase.firestore.FieldValue.serverTimestamp();
+	servey.doc(firebase.firestore.FieldValue.increment(1)).set(doc)
+	.then(function() {
+		callback();
+	});
+}
+function submit() {
+	var phone = $("#tel").val();
+	var name = $("#name").val();
+	var age = $("#age").val();
+	var exp = $("#exp").val();
+	var agree = $("#agree").is(':checked');
+	var trouble = Object.keys(troubles).join(" / ");
+
+	if (Object.keys(troubles).length == 0) {
+		alert('피부고민을 선택해주세요.');
+		return;
+	}
+	if (Object.keys(bucket).length == 0) {
+		alert('시술받을 상품을 선택해주세요.');
+		return;
+	}
+	if (phone == '' || phone.length != 11) {
+		alert('핸드폰 번호를 입력해주세요.');
+		return;
+	}
+	if (exp == '') {
+		alert('경험유무를 입력해주세요.');
+		return;
+	}
+	if (name == '') {
+		alert('이름을 입력해주세요.');
+		return;
+	}
+	if (age == 'x') {
+		alert('연령을 선택해주세요.');
+		return;
+	}
+	if (agree == false) {
+		alert('개인정보수집동의에 체크해주세요.');
+		return;
+	}
+
+	writeToDb({
+		phone: phone,
+		name: name,
+		trouble: trouble,
+		exp: exp,
+		age: age,
+		items: bucket,
+		agree: agree
+	}, function() {
+		alert('신청이 완료되었습니다!');
+		window.location.href = redirectTo;
+	});
+}
+
+rivets.formatters.currency = function(value){
+  return value.toFixed(1).replace(/\d(?=(\d{3})+\.)/g, '$&,').slice(0, -2);
+}
+var bd = rivets.bind($('#final-prices'), prices);
+</script>
